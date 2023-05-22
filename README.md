@@ -11,4 +11,4 @@ yarn dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Run the devnet demo:
-
+[https://mintui-cmv3v2-starter.netlify.app/](https://mintui-cmv3v2-starter.netlify.app/)
