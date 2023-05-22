@@ -117,7 +117,7 @@ export default function Home() {
 
   useEffect(() => {
     retrieveAvailability();
-  }, []);
+  }, [mintCreated]);
 
   // Inner Mint component to handle showing the Mint button,
   // and mint messages
@@ -194,7 +194,7 @@ export default function Home() {
           },
         });
   
-        const nft = await fetchDigitalAsset(umi, nftSigner.publicKey)
+        const nft = await fetchDigitalAsset(umi, nftSigner.publicKey);
         setMintCreated(nftSigner.publicKey);
         setMintMsg("Mint was successful!");
         
@@ -209,20 +209,13 @@ export default function Home() {
   
     if (mintCreated) {
       return (
-        <>
-          <a
-            className={styles.success}
-            target="_blank"
-            href={`https://solscan.io/token/${base58PublicKey(mintCreated)}${network === 'devnet' ? '?cluster=devnet' : ''}`
-            }
-            rel="noreferrer"
-          >
-            <Image className={styles.logo} src="/nftHolder.png" alt="Blank NFT" width={300} height={300} priority/>
-            <p className="mintAddress">
-              <code>{base58PublicKey(mintCreated)}</code>
-            </p>
-          </a>
-      </>
+        <a className={styles.success} target="_blank" rel="noreferrer"
+          href={`https://solscan.io/token/${base58PublicKey(mintCreated)}${network === 'devnet' ? '?cluster=devnet' : ''}`}>
+          <Image className={styles.logo} src="/nftHolder.png" alt="Blank NFT" width={300} height={300} priority/>
+          <p className="mintAddress">
+            <code>{base58PublicKey(mintCreated)}</code>
+          </p>
+        </a>
       );
     }
 
@@ -256,9 +249,9 @@ export default function Home() {
               <button className={styles.mintMsgClose} onClick={() => {setMintMsg(undefined);}}>&times;</button>
               <span>{mintMsg}</span>
             </div>)} 
-      </main>
-    </WalletModalProvider>
-  </WalletProvider>
+        </main>
+      </WalletModalProvider>
+    </WalletProvider>
   )
 }
 
