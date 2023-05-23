@@ -235,7 +235,7 @@ export default function Home() {
         <main className={styles.main}>
           <WalletMultiButtonDynamic/>
         
-          <h1>Mint Porcupine Playground Pals</h1>
+          <h1>Mint Demo by <a href="https://porcupineplaygroundpals.com/how-to-create-a-minting-ui-for-collection-deployed-with-metaplexs-sugar-2-1-1/" target="_blank" rel="noreferrer">Porcupine Playground Pals</a></h1>
           
           <Image className={styles.logo} src="/preview.gif" alt="Preview of NFTs" width={300} height={300} priority/>
 

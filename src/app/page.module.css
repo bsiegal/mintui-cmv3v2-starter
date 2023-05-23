@@ -23,10 +23,11 @@
   font-weight: 600;
   padding: 0 24px;
   background-color: yellowgreen;
+  cursor: pointer;
 }
 
-.mintBtn:hover(:not(:disabled)) {
-  background-color: #adff2f;
+.mintBtn:not(:disabled):hover {
+  background-color: #aef643;
 }
 
 .mintMsg {
