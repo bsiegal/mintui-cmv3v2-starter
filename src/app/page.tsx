@@ -26,7 +26,7 @@ import { base58PublicKey,
 } from "@metaplex-foundation/umi";
 import { walletAdapterIdentity } from "@metaplex-foundation/umi-signer-wallet-adapters";
 import { setComputeUnitLimit } from '@metaplex-foundation/mpl-essentials';
-import { mplTokenMetadata, fetchDigitalAsset, TokenStandard } from "@metaplex-foundation/mpl-token-metadata";
+import { mplTokenMetadata, TokenStandard } from "@metaplex-foundation/mpl-token-metadata";
 import { mplCandyMachine, 
   fetchCandyMachine, 
   mintV2, 
@@ -194,10 +194,8 @@ export default function Home() {
           },
         });
   
-        const nft = await fetchDigitalAsset(umi, nftSigner.publicKey);
         setMintCreated(nftSigner.publicKey);
         setMintMsg("Mint was successful!");
-        
   
       } catch (err: any) {
         console.error(err);
